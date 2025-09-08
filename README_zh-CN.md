@@ -16,6 +16,7 @@
 - [模型库](#模型库)
 - [运行说明](#运行说明)
 - [案例](#案例)
+- [注意事项](#注意事项)
 - [许可证](#许可证)
 
 ## 简介
@@ -33,9 +34,15 @@ CrashEye集成的检测器包括[MMdetection](https://github.com/open-mmlab/mmde
 
 CrashEye在多源碰撞场景中是有效的，包括端部吸能碰撞，整车碰撞，缩比列车碰撞等。  
 <div align="center">
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/6c29886f-ae7a-4a55-8be4-352ee85b7d3e"/>
+<img src="assets/trackres.gif" width="600"/>
 </div>
 
 - **速度快**
 
+所有的操作（检测/跟踪）均在强大的GPU上（```RTX4090@24G```）实现。借助既有的数据处理流水线，无需对高速摄影仪（HS2C）采集的高分辨率图像进行处理，而是通过缩放操作来显著降低显存。  
+<div align="center">
+<img src="assets/trackres.gif" />
+</div>
+
 - **性能高**
+
