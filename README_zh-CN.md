@@ -47,9 +47,11 @@ CrashEye在多源碰撞场景中是有效的，包括端部吸能碰撞，整车
 </div>
 
 - **性能高**
+
 CrashEye包含一个强基线模型，采用[CVMR](https://github.com/YanJieWen/CVMR)来实现小目标检测，[LWTGPF](https://github.com/YanJieWen/LWTGPF-2025)进行实例的深度外观特征提取，[MASORT](https://github.com/YanJieWen/MASORT)对目标进行跨帧的自适应跟踪。
 
 ## 安装
+
 
 
 
