@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/CrashEye-logo-removebg-preview.png" width="600"/>
+  <img src="assets/CrashEye-logo-removebg-preview.png" width="400"/>
   <div>&nbsp;</div>
 </div>
 
