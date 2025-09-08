@@ -22,6 +22,10 @@
 - [许可证](#许可证)
 
 ## 新闻
+- **⭐2025-09-08**  
+  - 初始版本 `CrashEye` 发布，支持列车碰撞序列图像自主感知。  
+  - 提供 `Crash2024` `Crash-ReID` `Crash-Seq` 数据集接口。
+  - 提供各个模型预训练权重，包括检测以及Re-ID。 
 
 ## 简介
 [CrashEye](https://github.com/YanJieWen/CrashEye)是第一个面向**列车耐撞性**设计的目标检测+跟踪项目。它可以在无需任何人工干预的情况下实现列车碰撞过程中的棋盘导航点的自主轨迹提取。
@@ -54,6 +58,7 @@ CrashEye在多源碰撞场景中是有效的，包括端部吸能碰撞，整车
 CrashEye包含一个强基线模型，采用[CVMR](https://github.com/YanJieWen/CVMR)来实现小目标检测，[LWTGPF](https://github.com/YanJieWen/LWTGPF-2025)进行实例的深度外观特征提取，[MASORT](https://github.com/YanJieWen/MASORT)对目标进行跨帧的自适应跟踪。各基线的性能均在项目库中进行报告。
 
 ## 安装
+
 
 
 
