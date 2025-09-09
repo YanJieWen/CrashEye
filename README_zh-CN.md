@@ -117,10 +117,58 @@ pip install -v -e .
 
 ### 4. 安装MASORT及其外部库
 
+```shell
+cd modeling/MASORT
+python setup.py develop
+```
 
+### 5. 下载external库，可参考[MASORT](https://github.com/YanJieWen/MASORT)
 
+```shell
+cd external
+git clone https://github.com/JonathonLuiten/TrackEval.git
+cd TrackEval
+pip install -v -e .
+cd ..
 
+git clone https://github.com/KaiyangZhou/deep-person-reid.git
+cd deep-person-reid
+pip install -r requirements.txt
+python setup.py develop
+cd ..
 
+git clone https://github.com/JDAI-CV/fast-reid.git
+
+```
+
+### 6. 其他库安装
+
+```shell
+pip install faiss-gpu
+pip install emoji
+pip inistall openpyxl
+pip install loguru
+pip install thop
+pip install filterpy
+pip install scikit-learn
+pip install grad-cam==1.4.8
+pip install timm
+
+```
+
+## 数据准备  
+
+CrashEye开发了全球首套面向列车碰撞的基准，包括检测数据集`Crash2024`, `Crash-Seq`以及`Crash-ReID`。所有数据按照要求提供。
+
+<div align="center">
+
+| 数据类型 | 名称| 下载地址 | 存放地址 |
+| ---------- | ---------- | ----------------------- | -------------------------------------------- |
+| 检测| Crash2024 | [data](https://drive.google.com/drive/folders/1BJOdywj-hgXRKt_q0TEcBGpCV4Wojmhc?usp=drive_link) | **datasets** |
+| 重识别 | Crash-ReID | [data](https://pan.baidu.com/s/17e5o7nZqMTBO0WxoDDfZvA?pwd=ks5f) | **datasets**|
+| 跟踪 | Crash-Seq | [data]( https://pan.baidu.com/s/1FyOSl3A43Cibm6zxXlGYbA?pwd=gpju) | **datasets** |
+
+</div>
 
 
 
