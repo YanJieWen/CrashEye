@@ -1,0 +1,89 @@
+task_name: 'mix_ult_yolov8s_crash'
+
+benchmark_setting:
+  test: False
+  name: 'Crash-Seq'
+
+#
+# python tools/convert_mot17_to_coco.py
+# python tools/mix_data_ablation.py
+# 在进行训练前，需要将MOT数据集转为COCO格式
+# 1) 将MOT转为COCO格式
+# 2) 在mmdet的configs/__base__/datasets中创建一个文件读取训练数据
+# 3) 修改训练的配置文件，num_classes，datasets
+# 4) 创建一个类mmdetection/datasets/mot.py
+# 5) 修改mmdetection/mmdet/core/evaluation/class_name.py
+# 5) 按照自身需求修改主要的config文件
+# 6) cd modeling/mmdetection/python setup.py install
+#
+
+detect:
+  train:
+    model: 'ultralytics'
+    data: './modeling/CVMR/ultralytics/cfg/datasets/crash.yaml'
+    pretrained: './pretrained/det/yolov8s.pt'
+    epochs: 80
+    batch: 4
+    imgsz: 1440
+    lr0: 0.001
+    fliplr: 0.5
+    mixup: 0.0
+    copy_paste: 0.0
+    crop_fraction: 1.0
+    device: 0
+    amp: False
+
+  test:
+    model: 'ultralytics'
+    weight: 'modeling/CVMR/runs/yolov8-s-1440/weights/best.pt'
+    iou: 0.7
+    imgsz: 1440
+    max_det: 300
+    conf: 0.001
+    batch: 4
+    save_json: True
+
+  anaysis:
+    model: 'ultralytics'
+    data_root: 'mix_crash_ch'
+    json: True
+    ckpt: 'modeling/CVMR/runs/yolov8-s-1440/weights/best.pt'
+    json_file: 'val_half.json'
+    batch: 4
+    iou: 0.7
+    conf: 0.001
+    pr: True
+    thr: -1
+    heat: True
+    method: 'GradCAM'
+    layer: [15,18,21]
+    backward_type: 'all'
+    vis_conf: 0.2
+    ratio: 0.02
+    show_box: False
+    renormalize: True
+    imgsz: [1440,1440]
+    demo_dir: './demo/crash'
+  
+
+Track:
+  model: 'openmm'  #masort&openmm
+  aspect_ratio: 1.6
+  min_box_area: 10
+  dataset:
+    data_type: 'MOTDataset'
+    data_dir: './datasets/mix_crash_ch'
+    json_file: 'val_half.json'
+    name: 'crash_train'
+    img_size: [800,1440]
+  detector:
+    conf: 0.25
+    iou: 0.7
+    imgsz: (1440,1440)
+    ckpt: 'modeling/CVMR/runs/yolov8-s-1440/weights/best.pt'
+  tracker:
+    config: 'modeling/mmtracking/configs/mot/deepsort/deepsort_faster-rcnn_fpn_4e_mot17-private-half.py'
+    match_iou_thr: 0.6
+    num_tentatives: 1
+    num_frames_retain: 70
+    img_size: (800,1440)

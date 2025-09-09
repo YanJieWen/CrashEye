@@ -1,0 +1,80 @@
+task_name: 'mm_centernet_crash'
+
+benchmark_setting:
+  test: False
+  name: 'Crash-Seq'
+
+#
+# python tools/convert_mot17_to_coco.py
+# python tools/mix_data_ablation.py
+# 在进行训练前，需要将MOT数据集转为COCO格式
+# 1) 将MOT转为COCO格式
+# 2) 在mmdet的configs/__base__/datasets中创建一个文件读取训练数据
+# 3) 修改训练的配置文件，num_classes，datasets
+# 4) 创建一个类mmdetection/datasets/mot.py
+# 5) 修改mmdetection/mmdet/core/evaluation/class_name.py
+# 5) 按照自身需求修改主要的config文件
+# 6) cd modeling/mmdetection/python setup.py install
+#
+
+detect:
+  train:
+    model: 'mmdet'
+    config: './modeling/mmdetection/configs/crash/centernet_res18_dcn_crash.py'
+    auto_scale_lr: True
+    resume_from:
+    auto_resume: False
+    gpus:
+    gpu_ids:
+    gpu_id: 0
+    seed: 42
+    diff_seed: False
+    deterministic: False
+    no_validate: False
+    work_dir: 'train'
+
+  test:
+    model: 'mmdet'
+    work_dir: 'test'
+    checkpoint: latest.pth
+    fuse_conv_bn: False
+    show: False
+    show_dir:
+    show_score_thr: 0.3
+    out: results.json
+
+  anaysis:
+    model: 'mmdet'
+    ckpt: latest.pth
+    demo_file: './datasets/Crash-Seq/test/crash-009/img1/000004.jpg'
+    draw_thresh: 0.3
+
+#运行tracker前保证上述步骤全部完成
+
+Track:
+  model: 'openmm'  #masort&openmm
+  aspect_ratio: 1.6
+  min_box_area: 10
+  dataset:
+    data_type: 'MOTDataset'
+    data_dir: './datasets/mix_crash_ch'
+    json_file: 'val_half.json'
+    name: 'crash_train'
+    img_size: [800,1600]
+  detector:
+    score_thr: 0.01
+    nms_thresh: 0.7
+    input_size: (800,1600)
+    ckpt: latest.pth
+  tracker:
+    config: 'modeling/mmtracking/configs/mot/deepsort/deepsort_faster-rcnn_fpn_4e_mot17-private-half.py'
+    match_iou_thr: 0.6
+    num_tentatives: 1
+    num_frames_retain: 70
+    img_size: (800,1600)
+
+
+
+
+
+
