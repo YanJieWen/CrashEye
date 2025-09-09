@@ -70,9 +70,12 @@ pip install -U openmim
 mim install mmenegine
 ```
 - **安装mmcv**
-mmdet与mmcv的版本需要对齐，[参考](https://github.com/open-mmlab/mmtracking/blob/master/docs/zh_cn/install.md)。对于[mmcv](https://github.com/open-mmlab/mmcv)可采用轮子下载，参考列表在[此处](https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html)
+mmdet与mmcv的版本需要对齐，[参考此处](https://github.com/open-mmlab/mmtracking/blob/master/docs/zh_cn/install.md)。对于[mmcv](https://github.com/open-mmlab/mmcv)可采用轮子下载，参考列表在[此处](https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html)
+
+[![mmcv](https://img.shields.io/badge/mmcv-1.7.2-blue)](https://drive.google.com/drive/folders/1pAr4dmMDkEW2Wvl4af2sknU2GPN2856S?usp=sharing)
+
 ```shell
-mim install xxx.whl
+mim install mmcv_full-1.7.2-cp38-cp38-manylinux1_x86_64.whl
 ```
 - **安装mmdetection**
 ```shell
@@ -89,10 +92,30 @@ git clone https://github.com/open-mmlab/mmtracking.git
 cd mmtracking
 git checkout tags/v0.14.0
 python setup.py  develop
+cd ..
 ```
 ### 3. 安装Ultralytics  
 
+- **安装CVMR**
+```shell
+git clone https://github.com/YanJieWen/CVMR.git
+cd CVMR
+```
+- **安装[Casual Conv1D](https://github.com/Dao-AILab/causal-conv1d/releases)和[SSM](https://github.com/state-spaces/mamba/releases)算子**
 
+[![Casual Conv1D](https://img.shields.io/badge/CNN-cuda-blue)](https://drive.google.com/drive/folders/1pAr4dmMDkEW2Wvl4af2sknU2GPN2856S?usp=sharing)
+[![SSM](https://img.shields.io/badge/Mamba-cuda-blue)](https://drive.google.com/drive/folders/1pAr4dmMDkEW2Wvl4af2sknU2GPN2856S?usp=sharing)
+
+```shell
+pip install causal_conv1d-1.4.0+cu118torch2.0cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+pip install mamba_ssm-2.2.2+cu118torch2.0cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+pip install -v -e .
+```
+- **修改源码**
+
+将modeling/CVMR/ultralytics/engine/validator.py 第`131`行强制半精度注释 （在某些请款下训练可能导致Nan）
+
+### 4. 安装MASORT及其外部库
 
 
 
