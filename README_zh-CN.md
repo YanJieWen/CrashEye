@@ -185,3 +185,18 @@ CrashEye在[configs](configs)中提供了``7``个案例，它们涵盖了纯open
 | YOLOv8s | MASORT | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew)| [config](ult_crash_yolov8.yaml)  |  **pretrained/det** |
 
 </div>
+
+另外，CrashEye还提供了面向行人和碰撞场景的Re-ID预训练模型:  
+
+<div align="center">  
+| 数据集 | 模型 | 存放地址 |
+| ---------- | ---------------------------------------------------------------------------| ---------------------------  |
+| MOT17-val | model[[baidu:csuw]](https://pan.baidu.com/s/1Mhbw2E4KPvz704OaAloe5A) | **pretrained/reid** |
+| MOT17-test | model[[baidu:csuw]](https://pan.baidu.com/s/1Mhbw2E4KPvz704OaAloe5A) | **pretrained/reid** |
+| MOT20 | model[[baidu:csuw]](https://pan.baidu.com/s/1Mhbw2E4KPvz704OaAloe5A) | **pretrained/reid** |
+| DanceTrack | model[[baidu:csuw]](https://pan.baidu.com/s/1Mhbw2E4KPvz704OaAloe5A) | **pretrained/reid** |
+| Crash-Seq | model[[baidu:csuw]](https://pan.baidu.com/s/1Mhbw2E4KPvz704OaAloe5A) | **pretrained/reid** |  
+
+</div>  
+
+## 运行说明
