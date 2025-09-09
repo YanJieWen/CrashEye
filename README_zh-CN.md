@@ -170,7 +170,18 @@ CrashEye开发了全球首套面向列车碰撞的基准，包括检测数据集
 
 </div>
 
+## 模型库  
+CrashEye在[configs](configs)中提供了``7``个案例，它们涵盖了纯openmmlab方法，纯ultralytics方法以及混合方法。也就是说，开发人员可以通过修``yaml``文件来搭建任意的模型。``需要注意的是，需要提供模型的预训练模型``:  
+<div align="center">  
 
+| 检测 | 跟踪 | 模型 | 配置文件 | 存放地址 |
+| ---------- | ---------- | --------------------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Centernet | MASORT | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew) | [config](configs/mix_crash_centernet_masort) | **pretrained/det** |
+| YOLOv8 | Deepsort | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew) | [config](configs/mix_crash_yolov8s_deepsort) | **pretrained/det** |
+| Centernet | Deepsort | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew) | [config](configs/mm_crash_centernet) |**pretrained/det** |
+| 跟踪 | Crash-Seq | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew) | **pretrained/det**  | **pretrained/det** |
+| 跟踪 | Crash-Seq | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew) | **pretrained/det**  | **pretrained/det** |
+| 跟踪 | Crash-Seq | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew) | **pretrained/det**  | **pretrained/det** |
+| 跟踪 | Crash-Seq | model[[baidu:csuw]](https://pan.baidu.com/s/1YjfNrMjzZW8y4461-lIKew)| **pretrained/det**  |  **pretrained/det** |
 
-
-
+</div>
