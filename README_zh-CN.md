@@ -57,7 +57,44 @@ CrashEye在多源碰撞场景中是有效的，包括端部吸能碰撞，整车
 
 CrashEye包含一个强基线模型，采用[CVMR](https://github.com/YanJieWen/CVMR)来实现小目标检测，[LWTGPF](https://github.com/YanJieWen/LWTGPF-2025)进行实例的深度外观特征提取，[MASORT](https://github.com/YanJieWen/MASORT)对目标进行跨帧的自适应跟踪。各基线的性能均在项目库中进行报告。
 
-## 安装
+## 安装  
+
+### 1. 安装CrashEye
+```shell
+git clone  https://github.com/YanJieWen/CrashEye.git
+python setup.py develop
+```
+### 2. 安装[openmmlab](https://mmdetection.readthedocs.io/zh-cn/latest/get_started.html)基线库  
+```shell
+pip install -U openmim
+mim install mmenegine
+```
+- **安装mmcv**
+mmdet与mmcv的版本需要对齐，[参考](https://github.com/open-mmlab/mmtracking/blob/master/docs/zh_cn/install.md)。对于[mmcv](https://github.com/open-mmlab/mmcv)可采用轮子下载，参考列表在[此处](https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html)
+```shell
+mim install xxx.whl
+```
+- **安装mmdetection**
+```shell
+cd modeling
+cd mmdetection
+git checkout tags/v2.28.0
+python setup.py develop
+pip install -v -e .
+cd ..
+```
+- **安装mmtracking**
+```shell
+git clone https://github.com/open-mmlab/mmtracking.git
+cd mmtracking
+git checkout tags/v0.14.0
+python setup.py  develop
+```
+### 3. 安装Ultralytics  
+
+
+
+
 
 
 
