@@ -205,3 +205,25 @@ CrashEye在[configs](configs)中提供了``7``个案例，它们涵盖了纯open
 </div>  
 
 ## 运行说明
+
+CrashEye提供了一个最小示例来展示如何运行本项目。本运行案例源自[CVMR+MASORT](configs/ult_crash_cvmrs.yaml)。  
+[![CVMRS](https://img.shields.io/badge/CVMR-Crash-blue)](https://pan.baidu.com/s/1tltqqGCQHEANv9VeJbWs-w?pwd=4bjh)  
+
+将上述训练好的权重文件夹命名为`cvmr-s-1440`并将其放入`modeling/CVMR/runs`路径下  
+
+
+- **准备工作**
+
+CrashEye遵循大部分跟踪器的训练方式，采用混合训练的方式。先将Crash-Seq转为COCO格式
+```shell
+python tools/convert_crash_to_coco.py
+```
+在混合数据前，可能还需要创建图像目录的软链接，可以参考[mix](tools/mix_data_crash_ablation.py)的抬头。 
+```shell
+python tools/mix_data_crash_ablation.py
+```
+对于YOLO数据集，可能需要对COCO数据进行进一步转换，执行[代码](tools/convert_coco_to_yolo.py)并将数据移动至`CVMR/datasets`路径下
+```shell
+python tools/convert_coco_to_yolo.py
+mkdir -p modeling/CVMR/datasets
+```
