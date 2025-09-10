@@ -244,7 +244,12 @@ CrashEye可以输出热图，COCO格式预测结果，PR曲线结果。
 ```shell
 python tools/ult_ana.py --config configs/ult_crash_cvmrs.yaml
 ```
-分析的结果以及`log` 文件被存储在`runs/ult_cvmr-s_crash/analysis`  
+分析的结果以及`log` 文件被存储在`runs/ult_cvmr-s_crash/analysis`   
+
+<div align="center">
+  <img src="assets/heatmap.png" width="400"/>
+  <div>&nbsp;</div>
+</div>
 
 - **跟踪评估**
 
