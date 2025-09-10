@@ -225,5 +225,9 @@ python tools/mix_data_crash_ablation.py
 对于YOLO数据集，可能需要对COCO数据进行进一步转换，执行[代码](tools/convert_coco_to_yolo.py)并将数据移动至`CVMR/datasets`路径下
 ```shell
 python tools/convert_coco_to_yolo.py
-mkdir -p modeling/CVMR/datasets
+mkdir -p modeling/CVMR/datasets/crash
 ```
+- **训练模型**
+
+
+
