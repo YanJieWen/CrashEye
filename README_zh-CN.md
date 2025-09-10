@@ -285,6 +285,11 @@ python tools/demo.py -c configs/ult_crash_cvmrs.yaml -d demo/demo02.avi
 - 	🙏[ByteTrack](https://github.com/FoundationVision/ByteTrack)
 - 	🙏[TOPIC](https://github.com/holmescao/TOPICTrack)
 - 	🙏[RFLA](https://github.com/Chasel-Tsui/mmdet-rfla)
-我们承诺会对[CrashEye](https://github.com/YanJieWen/CrashEye)进行长期维护，更多问题欢迎咨询
+
+我们承诺会对[CrashEye](https://github.com/YanJieWen/CrashEye)进行长期维护，更多问题欢迎咨询obitowen@csu.edu.cn  
+
+
+## 许可证 
+[MIT](LICENSE) © YanjieWen
 
 
