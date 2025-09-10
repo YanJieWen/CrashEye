@@ -253,9 +253,38 @@ python tools/ult_ana.py --config configs/ult_crash_cvmrs.yaml
 
 - **跟踪评估**
 
+```shell
+python tools/track.py --config configs/ult_crash_cvmrs.yaml
+```
+类似地，跟踪结果被保存至`runs/ult_cvmr-s_crash/analysis`文件夹下。
 
 
+## 案例 
+CrashEye仅需要一行代码即可实现对任意列车碰撞场景的持续跟踪
+```shell
+python tools/demo.py -c configs/ult_crash_cvmrs.yaml -d demo/demo02.avi
+```
+结果可以在`runs/ult_cvmr-s_crash/demo`文件夹下查看。更重要的是，我们还提供了一个线性插值[方法](utils/interpolation.py)来填充由于遮挡导致的轨迹丢失，生成的跟踪结果名为`data_dti.txt`  
 
 
+## 注意事项  
+
+- 	⚠️在调用`TrackEval`评估HOTA时，可能**numpy**版本错误，需要对numpy进行版本调整
+- 	⚠️基于mmdetection构建新模型时，需要重新编译``python setup.py install``
+-   ⚠️模型训练的分辨率为800x1440，开发人员需要精心调整分辨率来保证最优结果
+-   ⚠️对于**MASORT**，可能需要精心调整`alpha_gate`和`appear_thresh`参数来获得最优跟踪结果
+-   ⚠️CrashEye提供的强基线有望解决远距离低帧率HS2C或者近距离高帧率HS2C，但无法解决远距离高帧率双重难点，这也是我们未来的工作重心
+
+
+## 致谢
+
+我们非常开源工作社区提供的坚实代码基础：
+- 	🙏[mmdetection](https://github.com/open-mmlab/mmdetection)
+- 	🙏[mmtracking](https://github.com/open-mmlab/mmtracking)
+- 	🙏[ultralytics](https://github.com/ultralytics/ultralytics)
+- 	🙏[ByteTrack](https://github.com/FoundationVision/ByteTrack)
+- 	🙏[TOPIC](https://github.com/holmescao/TOPICTrack)
+- 	🙏[RFLA](https://github.com/Chasel-Tsui/mmdet-rfla)
+我们承诺会对[CrashEye](https://github.com/YanJieWen/CrashEye)进行长期维护，更多问题欢迎咨询
 
 
