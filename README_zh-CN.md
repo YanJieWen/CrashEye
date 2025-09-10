@@ -92,7 +92,8 @@ cd ..
 git clone https://github.com/open-mmlab/mmtracking.git
 cd mmtracking
 git checkout tags/v0.14.0
-python setup.py  develop
+pip install -v -e .
+python setup.py  install
 cd ..
 ```
 ### 3. 安装Ultralytics  
@@ -110,7 +111,9 @@ cd CVMR
 ```shell
 pip install causal_conv1d-1.4.0+cu118torch2.0cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
 pip install mamba_ssm-2.2.2+cu118torch2.0cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+pip install --upgrade pip
 pip install -v -e .
+cd .. 
 ```
 - **修改源码**
 
@@ -119,7 +122,7 @@ pip install -v -e .
 ### 4. 安装MASORT及其外部库
 
 ```shell
-cd modeling/MASORT
+cd MASORT
 python setup.py develop
 ```
 
