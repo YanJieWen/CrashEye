@@ -73,7 +73,8 @@ def build_dataloader(cfg):
         raise ValueError(f'{model_name} is not found')
     cfg_dict = cfg.__dict__
     cfg_dict.pop('data_type')
-    cfg_dict['img_size'] = eval(cfg_dict['img_size'])
+    if isinstance(cfg_dict['img_size'],str):
+        cfg_dict['img_size'] = eval(cfg_dict['img_size'])
     # transform = ValTransform(rgb_means=(0.485, 0.456, 0.406),std=(0.229, 0.224, 0.225),)
     transform = ValTransform()
     cfg_dict['preproc'] = transform
