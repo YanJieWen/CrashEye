@@ -62,12 +62,13 @@ CrashEye包含一个强基线模型，采用[CVMR](https://github.com/YanJieWen/
 ### 1. 安装CrashEye
 ```shell
 git clone  https://github.com/YanJieWen/CrashEye.git
+cd CrashEye
 python setup.py develop
 ```
 ### 2. 安装[openmmlab](https://mmdetection.readthedocs.io/zh-cn/latest/get_started.html)基线库  
 ```shell
 pip install -U openmim
-mim install mmenegine
+mim install mmengine
 ```
 - **安装mmcv**
 mmdet与mmcv的版本需要对齐，[参考此处](https://github.com/open-mmlab/mmtracking/blob/master/docs/zh_cn/install.md)。对于[mmcv](https://github.com/open-mmlab/mmcv)可采用轮子下载，参考列表在[此处](https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html)
@@ -81,9 +82,9 @@ mim install mmcv_full-1.7.2-cp38-cp38-manylinux1_x86_64.whl
 ```shell
 cd modeling
 cd mmdetection
-git checkout tags/v2.28.0
-python setup.py develop
+%git checkout tags/v2.28.0
 pip install -v -e .
+python setup.py install
 cd ..
 ```
 - **安装mmtracking**
