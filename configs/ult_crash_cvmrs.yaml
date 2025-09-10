@@ -21,7 +21,7 @@ detect:
   train:
     model: 'ultralytics'
     data: './modeling/CVMR/ultralytics/cfg/datasets/crash.yaml'
-    pretrained: './pretrained/det/yolov8s.pt'
+    pretrained: './pretrained/det/cvmr-s.pt'
     epochs: 80
     batch: 4
     imgsz: 1440
