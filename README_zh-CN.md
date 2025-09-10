@@ -264,7 +264,13 @@ CrashEye仅需要一行代码即可实现对任意列车碰撞场景的持续跟
 ```shell
 python tools/demo.py -c configs/ult_crash_cvmrs.yaml -d demo/demo02.avi
 ```
-结果可以在`runs/ult_cvmr-s_crash/demo`文件夹下查看。更重要的是，我们还提供了一个线性插值[方法](utils/interpolation.py)来填充由于遮挡导致的轨迹丢失，生成的跟踪结果名为`data_dti.txt`  
+结果可以在`runs/ult_cvmr-s_crash/demo`文件夹下查看。更重要的是，我们还提供了一个线性插值[方法](utils/interpolation.py)来填充由于遮挡导致的轨迹丢失，生成的跟踪结果名为`data_dti.txt`   
+
+<div align="center">
+  <img src="assets/demo.gif" width="600"/>
+  <div>&nbsp;</div>
+</div>
+
 
 
 ## 注意事项  
