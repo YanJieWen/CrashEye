@@ -108,7 +108,7 @@ def main():
                                 layer=ana_cfg.layer,backward_type=ana_cfg.backward_type,conf_threshold=ana_cfg.vis_conf,
                                 ratio=ana_cfg.ratio,show_box=ana_cfg.show_box,renormalize=ana_cfg.renormalize)
         logger.info(f'{emoji.emojize(":rocket:")*3}=>GRAD CAM is built')
-        heater(ana_cfg.demo_dir,demo_out,ana_cfg.imgsz)
+        heater(ana_cfg.demo_dir,demo_out)
         logger.info(f'{emoji.emojize(":clown_face:")}=>{len(os.listdir(ana_cfg.demo_dir))} images have been saved at {demo_out}')
 
 if __name__ == '__main__':
