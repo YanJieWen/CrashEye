@@ -117,7 +117,7 @@ cd ..
 ```
 - **修改源码**
 
-将modeling/CVMR/ultralytics/engine/validator.py 第`131`行强制半精度注释 （在某些请款下训练可能导致Nan）
+将modeling/CVMR/ultralytics/engine/validator.py 第`113`行强制半精度注释 （在某些请款下训练可能导致Nan）
 
 ### 4. 安装MASORT及其外部库
 
@@ -150,7 +150,7 @@ git clone https://github.com/JDAI-CV/fast-reid.git
 ```shell
 pip install faiss-gpu
 pip install emoji
-pip inistall openpyxl
+pip install openpyxl
 pip install loguru
 pip install thop
 pip install filterpy
@@ -228,6 +228,29 @@ python tools/convert_coco_to_yolo.py
 mkdir -p modeling/CVMR/datasets/crash
 ```
 - **训练模型**
+
+```shell
+python tools/ult_train.py --config configs/ult_crash_cvmrs.yaml
+```
+- **评估模型**
+
+```shell
+python tools/ult_val.py --config configs/ult_crash_cvmrs.yaml
+```
+
+- **模型分析**
+
+CrashEye可以输出热图，COCO格式预测结果，PR曲线结果。
+```shell
+python tools/ult_ana.py --config configs/ult_crash_cvmrs.yaml
+```
+分析的结果以及`log` 文件被存储在`runs/ult_cvmr-s_crash/analysis`  
+
+- **跟踪评估**
+
+
+
+
 
 
 
