@@ -226,6 +226,7 @@ python tools/mix_data_crash_ablation.py
 ```shell
 python tools/convert_coco_to_yolo.py
 mkdir -p modeling/CVMR/datasets/crash
+mv datasets/mix_ablation_crash_yolo/* modeling/CVMR/datasets/crash
 ```
 - **训练模型**
 
