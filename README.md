@@ -313,4 +313,24 @@ Results are saved in `runs/ult_cvmr-s_crash/demo`. Furthermore，we also provide
 
 - ⚠️ For **MASORT**, the `alpha_gate` and `appear_thresh` parameters may need to be carefully adjusted to achieve optimal tracking results.
 
-- ⚠️ The strong baseline provided by CrashEye has the potential to address both long-range high-frame-rate HS2C and close-range low-frame-rate HS2C, but it cannot address the dual challenges of long-range low-frame-rate. This is also our future focus. 
+- ⚠️ The strong baseline provided by CrashEye has the potential to address both long-range high-frame-rate HS2C and close-range low-frame-rate HS2C, but it cannot address the dual challenges of long-range low-frame-rate. This is also our future focus.
+
+## Acknowledgements 
+
+We are grateful to the open source community for providing a solid code base: 
+- 	🙏[mmdetection](https://github.com/open-mmlab/mmdetection)
+
+- 	🙏[mmtracking](https://github.com/open-mmlab/mmtracking)
+
+- 	🙏[ultralytics](https://github.com/ultralytics/ultralytics)
+
+- 	🙏[ByteTrack](https://github.com/FoundationVision/ByteTrack)
+
+- 	🙏[TOPIC](https://github.com/holmescao/TOPICTrack)
+
+- 	🙏[RFLA](https://github.com/Chasel-Tsui/mmdet-rfla)
+
+We are committed to long-term maintenance of [CrashEye](https://github.com/YanJieWen/CrashEye). For more questions, please contact obitowen@csu.edu.cn 
+
+## License
+[MIT](LICENSE) © YanjieWen
