@@ -245,6 +245,7 @@ For the YOLO dataset, further conversion of the COCO data may be required. Execu
 ```shell
 python tools/convert_coco_to_yolo.py
 mkdir -p modeling/CVMR/datasets/crash
+mv datasets/mix_ablation_crash_yolo/* modeling/CVMR/datasets/crash
 ```
 
 - **Training**
