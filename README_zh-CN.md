@@ -279,7 +279,7 @@ python tools/demo.py -c configs/ult_crash_cvmrs.yaml -d demo/demo02.avi
 - 	⚠️基于mmdetection构建新模型时，需要重新编译``python setup.py install``
 -   ⚠️模型训练的分辨率为800x1440，开发人员需要精心调整分辨率来保证最优结果
 -   ⚠️对于**MASORT**，可能需要精心调整`alpha_gate`和`appear_thresh`参数来获得最优跟踪结果
--   ⚠️CrashEye提供的强基线有望解决远距离低帧率HS2C或者近距离高帧率HS2C，但无法解决远距离低帧率双重难点，这也是我们未来的工作重心
+-   ⚠️CrashEye提供的强基线有望解决远距离高帧率HS2C或者近距离低帧率HS2C，但无法解决远距离低帧率双重难点，这也是我们未来的工作重心
 
 
 ## 致谢
