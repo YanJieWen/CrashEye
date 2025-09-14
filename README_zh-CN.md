@@ -117,7 +117,7 @@ cd ..
 ```
 - **修改源码**
 
-将modeling/CVMR/ultralytics/engine/validator.py 第`113`行强制半精度注释 （在某些请款下训练可能导致Nan）
+将modeling/CVMR/ultralytics/engine/validator.py 第`113`行强制半精度注释 （在某些情况下训练可能导致Nan）
 
 ### 4. 安装MASORT及其外部库
 
