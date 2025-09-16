@@ -75,7 +75,7 @@ def main():
     ori_path = os.path.join(demo_root, 'data.txt')
     if os.path.isfile(ori_path):
         out_path = os.path.join(demo_root,'data_dti.txt')
-        dti(ori_path, out_path, n_min=10, n_dti=5)
+        dti(ori_path, out_path, n_min=25, n_dti=20)
         logger.info(f'Tracklets has been interpolation in {out_path}')
     else:
         logger.error(f'{ori_path} is not found')
