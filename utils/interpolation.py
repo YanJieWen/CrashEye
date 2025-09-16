@@ -39,7 +39,7 @@ def dti(txt_path, save_path, n_min=25, n_dti=20):
     '''
     seq_data = np.loadtxt(txt_path,dtype=np.float64,delimiter=',')
     min_id = int(np.min(seq_data[:,1]))
-    max_id = int(np.min(seq_data[:,1]))
+    max_id = int(np.max(seq_data[:,1]))
     seq_results = np.zeros((1, 10), dtype=np.float64)
     for track_id in range(min_id, max_id + 1): #遍历每一个tracklet
         index = (seq_data[:, 1] == track_id)
