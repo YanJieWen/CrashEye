@@ -55,6 +55,7 @@ for ann in crash_staic_json['annotations']:
     if ann['category_id']==1:
         ann['id'] = ann['id'] + max_ann
         ann['image_id'] = ann['image_id'] + max_img
+        ann['track_id'] = -1
         ann_list.append(ann)
 video_list.append({
     'id': max_video,
@@ -80,6 +81,7 @@ for ann in crash_staic_val_json['annotations']:
     if ann['category_id']==1:
         ann['id'] = ann['id'] + max_ann
         ann['image_id'] = ann['image_id'] + max_img
+        ann['track_id'] = -1
         ann_list.append(ann)
 video_list.append({
     'id': max_video,
@@ -104,6 +106,7 @@ for ann in crash_static_test_json['annotations']:
     if ann['category_id']==1:
         ann['id'] = ann['id'] + max_ann
         ann['image_id'] = ann['image_id'] + max_img
+        ann['track_id'] = -1
         ann_list.append(ann)
 video_list.append({
     'id': max_video,
